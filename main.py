@@ -1,10 +1,7 @@
 from tkinter import *
-
-# for some retarted reason:
-# NameError: name 'tkinter' is not defined
-# so messagebox explicitly imported:
+import os
 from tkinter import messagebox
-
+from PIL import ImageTk, Image
 from importlib import reload
 import Fund 
 import Texts
@@ -25,6 +22,15 @@ def Extract():
 #     Fund.Fund.Fund_Graphic(fund_name)
 #     reload(Fund)
 
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 
 def About():
     messagebox.showinfo('About',Texts.Description())
@@ -48,6 +54,7 @@ def main():
     root.title('Fund Query')
     root.configure(background="white")
     root.resizable(False, False)
+    root.iconbitmap(resource_path("wallet.ico"))
     
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Dropdown Menu ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     
@@ -70,7 +77,9 @@ def main():
     
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Label() ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     
-    photo = PhotoImage(file="wallet.png")
+    image_location1 = resource_path("wallet.png")
+    photo = ImageTk.PhotoImage(Image.open(image_location1))
+
     Label_1 = Label(Frame_1, width=300, height=225, bg='#FED97E', image=photo)
     Label_1.pack()
     

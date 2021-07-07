@@ -17,7 +17,7 @@ class Fund():
     # Webpage in same directory as .py file
     # Webpage needs to be manually updated 
     # http://www.fundsdata.co.za/navs/ZEGN.htm
-    with open(r'South African - Equity - General Funds.html') as html_file:
+    with open(r'Funds.html') as html_file:
             soup = BeautifulSoup(html_file,'lxml')
     
     
