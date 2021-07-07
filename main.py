@@ -54,6 +54,7 @@ def main():
     root.title('Fund Query')
     root.configure(background="white")
     root.resizable(False, False)
+    'Icon from dribble.com'
     root.iconbitmap(resource_path("wallet.ico"))
     
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Dropdown Menu ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
