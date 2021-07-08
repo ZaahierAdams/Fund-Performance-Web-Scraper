@@ -1,8 +1,10 @@
-"""
+'''
 Created on Thu Nov 28 2019
 
-@author: Zaahier Adams
-"""
+Developed by: Zaahier Adams
+https://github.com/ZaahierAdams
+'''
+
 
 from bs4 import BeautifulSoup
 import csv
