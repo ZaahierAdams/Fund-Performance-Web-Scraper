@@ -1,3 +1,9 @@
+'''
+Developed by: Zaahier Adams
+https://github.com/ZaahierAdams
+'''
+
+
 from tkinter import *
 import os
 from tkinter import messagebox
